@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApi", "SignalRApi\SignalRApi.csproj", "{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRWebUI", "SignalRWebUI\SignalRWebUI.csproj", "{AA5A2485-7542-4EDA-BB09-79B63AE1164E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Entities", "SignalR.Entities\SignalR.Entities.csproj", "{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5A2485-7542-4EDA-BB09-79B63AE1164E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5A2485-7542-4EDA-BB09-79B63AE1164E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5A2485-7542-4EDA-BB09-79B63AE1164E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5A2485-7542-4EDA-BB09-79B63AE1164E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52D1F17-FAC1-4FC6-BCB3-6F1E3EF4C60B}
+	EndGlobalSection
+EndGlobal
