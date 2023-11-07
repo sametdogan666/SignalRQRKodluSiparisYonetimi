@@ -1,8 +1,9 @@
-﻿using SignalR.Entities.Entities;
+﻿using SignalR.Dto.ProductDto;
+using SignalR.Entities.Entities;
 
 namespace SignalR.DataAccess.Abstract;
 
 public interface IProductDal : IGenericDal<Product>
 {
-
+    List<ResultProductWithCategoryDto> GetProductsWithCategory();
 }

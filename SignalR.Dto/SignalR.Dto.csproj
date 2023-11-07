@@ -12,7 +12,6 @@
     <Folder Include="DiscountDto\" />
     <Folder Include="FeatureDto\" />
     <Folder Include="SocialMediaDto\" />
-    <Folder Include="ProductDto\" />
   </ItemGroup>
 
 </Project>

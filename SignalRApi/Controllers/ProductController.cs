@@ -29,6 +29,14 @@ namespace SignalRApi.Controllers
             return Ok(results);
         }
 
+        [HttpGet("get-list-products-with-category")]
+        public IActionResult GetListProductsWithCategory()
+        {
+            var results = _mapper.Map<List<ResultProductWithCategoryDto>>(_productService.GetProductsWithCategory());
+
+            return Ok(results);
+        }
+
         [HttpPost("create-product")]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {

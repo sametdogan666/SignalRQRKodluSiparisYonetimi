@@ -1,5 +1,6 @@
 ﻿using SignalR.Business.Abstract;
 using SignalR.DataAccess.Abstract;
+using SignalR.Dto.ProductDto;
 using SignalR.Entities.Entities;
 
 namespace SignalR.Business.Concrete;
@@ -36,5 +37,10 @@ public class ProductManager : IProductService
     public List<Product> GetAll()
     {
         return _productDal.GetAll();
+    }
+
+    public List<ResultProductWithCategoryDto> GetProductsWithCategory()
+    {
+        return _productDal.GetProductsWithCategory();
     }
 }
