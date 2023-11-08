@@ -1,0 +1,51 @@
+﻿@model UpdateBookingViewModel
+
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Rezervasyon İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Rezervasyon Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="Id"/>
+                            <div class="form-group">
+                                <label for="bookingfullname">Ad Soyad</label>
+                                <input type="text" class="form-control" asp-for="FullName" id="bookingfullname">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingphone">Telefon Numarası</label>
+                                <input type="text" class="form-control" asp-for="PhoneNumber" id="bookingphone">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingemail">Email Adresi</label>
+                                <input type="email" class="form-control" asp-for="Email" id="bookingemail">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingperson">Kişi Sayısı</label>
+                                <input type="number" class="form-control" asp-for="PersonCount" id="bookingperson">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingdate">Rezervasyon Tarihi</label>
+                                <input type="date" class="form-control" asp-for="Date" id="bookingdate">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary btn-round">Rezervasyonu Güncelle</button>
+                            <a href="/About/Index/" class="btn btn-danger btn-round">Değişikliklerden Vazgeç</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
