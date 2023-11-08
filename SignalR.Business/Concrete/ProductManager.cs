@@ -43,4 +43,19 @@ public class ProductManager : IProductService
     {
         return _productDal.GetProductsWithCategory();
     }
+
+    public int GetProductCount()
+    {
+        return _productDal.GetProductCount();
+    }
+
+    public int GetProductCountByCategoryNameHamburger()
+    {
+        return _productDal.GetProductCountByCategoryNameHamburger();
+    }
+
+    public int GetProductCountByCategoryNameDrink()
+    {
+        return _productDal.GetProductCountByCategoryNameDrink();
+    }
 }

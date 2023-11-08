@@ -40,4 +40,29 @@ public class EfProductDal : GenericRepository<Product>, IProductDal
 
         return results;
     }
+
+    public int GetProductCount()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Count();
+    }
+
+    public int GetProductCountByCategoryNameHamburger()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Where(x =>
+            x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.Id)
+                .FirstOrDefault())).Count();
+    }
+
+    public int GetProductCountByCategoryNameDrink()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Where(x =>
+            x.CategoryId == (context.Categories.Where(y => y.CategoryName == "İçecek").Select(z => z.Id)
+                .FirstOrDefault())).Count();
+    }
 }

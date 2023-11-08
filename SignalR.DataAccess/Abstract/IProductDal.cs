@@ -6,4 +6,8 @@ namespace SignalR.DataAccess.Abstract;
 public interface IProductDal : IGenericDal<Product>
 {
     List<ResultProductWithCategoryDto> GetProductsWithCategory();
+    int GetProductCount();
+    int GetProductCountByCategoryNameHamburger();
+    int GetProductCountByCategoryNameDrink();
+    
 }

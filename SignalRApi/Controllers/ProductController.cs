@@ -87,5 +87,23 @@ namespace SignalRApi.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("get-product-count")]
+        public IActionResult GetProductCount()
+        {
+            return Ok(_productService.GetProductCount());
+        }
+
+        [HttpGet("get-product-count-by-hamburger")]
+        public IActionResult GetProductCountByCategoryNameHamburger()
+        {
+            return Ok(_productService.GetProductCountByCategoryNameHamburger());
+        }
+
+        [HttpGet("get-product-count-by-drink")]
+        public IActionResult GetProductCountByCategoryNameDrink()
+        {
+            return Ok(_productService.GetProductCountByCategoryNameDrink());
+        }
     }
 }
