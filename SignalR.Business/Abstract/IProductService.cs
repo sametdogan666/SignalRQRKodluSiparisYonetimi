@@ -12,4 +12,5 @@ public interface IProductService : IGenericService<Product>
     decimal GetProductPriceAvg();
     string GetProductNameByMaxPrice();
     string GetProductNameByMinPrice();
+    decimal GetProductPriceByHamburgerAvg();
 }
