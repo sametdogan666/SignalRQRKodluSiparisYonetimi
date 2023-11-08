@@ -1,6 +1,6 @@
-﻿namespace SignalR.Dto.ProductDto;
+﻿namespace SignalRWebUI.ViewModels.ProductViewModels;
 
-public class GetProductDto
+public class UpdateProductViewModel
 {
     public int Id { get; set; }
     public string? ProductName { get; set; }

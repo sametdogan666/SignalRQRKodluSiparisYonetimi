@@ -1,6 +1,6 @@
-﻿namespace SignalR.Dto.ProductDto;
+﻿namespace SignalRWebUI.ViewModels.ProductViewModels;
 
-public class GetProductDto
+public class ResultProductViewModel
 {
     public int Id { get; set; }
     public string? ProductName { get; set; }
@@ -8,5 +8,5 @@ public class GetProductDto
     public decimal Price { get; set; }
     public string? ImageUrl { get; set; }
     public bool Status { get; set; }
-    public int CategoryId { get; set; }
+    public string? CategoryName { get; set; }
 }
