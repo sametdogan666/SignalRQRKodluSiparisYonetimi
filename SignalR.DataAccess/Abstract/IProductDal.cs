@@ -9,5 +9,8 @@ public interface IProductDal : IGenericDal<Product>
     int GetProductCount();
     int GetProductCountByCategoryNameHamburger();
     int GetProductCountByCategoryNameDrink();
-    
+    decimal GetProductPriceAvg();
+    string GetProductNameByMaxPrice();
+    string GetProductNameByMinPrice();
+
 }

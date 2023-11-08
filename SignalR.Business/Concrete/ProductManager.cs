@@ -58,4 +58,19 @@ public class ProductManager : IProductService
     {
         return _productDal.GetProductCountByCategoryNameDrink();
     }
+
+    public decimal GetProductPriceAvg()
+    {
+        return _productDal.GetProductPriceAvg();
+    }
+
+    public string GetProductNameByMaxPrice()
+    {
+        return _productDal.GetProductNameByMaxPrice();
+    }
+
+    public string GetProductNameByMinPrice()
+    {
+        return _productDal.GetProductNameByMinPrice();
+    }
 }

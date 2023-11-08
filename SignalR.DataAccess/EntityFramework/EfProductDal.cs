@@ -52,17 +52,36 @@ public class EfProductDal : GenericRepository<Product>, IProductDal
     {
         using var context = new SignalRContext();
 
-        return context.Products.Where(x =>
-            x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.Id)
-                .FirstOrDefault())).Count();
+        return context.Products.Count(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.Id)
+            .FirstOrDefault()));
     }
 
     public int GetProductCountByCategoryNameDrink()
     {
         using var context = new SignalRContext();
 
-        return context.Products.Where(x =>
-            x.CategoryId == (context.Categories.Where(y => y.CategoryName == "İçecek").Select(z => z.Id)
-                .FirstOrDefault())).Count();
+        return context.Products.Count(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "İçecek").Select(z => z.Id)
+            .FirstOrDefault()));
+    }
+
+    public decimal GetProductPriceAvg()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Average(x => x.Price);
+    }
+
+    public string GetProductNameByMaxPrice()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Where(x=>x.Price == (context.Products.Max(y=>y.Price))).Select(z=>z.ProductName).FirstOrDefault();
+    }
+
+    public string GetProductNameByMinPrice()
+    {
+        using var context = new SignalRContext();
+
+        return context.Products.Where(x => x.Price == (context.Products.Min(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
     }
 }

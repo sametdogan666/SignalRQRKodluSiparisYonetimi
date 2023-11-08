@@ -9,4 +9,7 @@ public interface IProductService : IGenericService<Product>
     int GetProductCount();
     int GetProductCountByCategoryNameHamburger();
     int GetProductCountByCategoryNameDrink();
+    decimal GetProductPriceAvg();
+    string GetProductNameByMaxPrice();
+    string GetProductNameByMinPrice();
 }
