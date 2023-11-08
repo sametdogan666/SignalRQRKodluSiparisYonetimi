@@ -37,4 +37,19 @@ public class OrderManager : IOrderService
     {
         return _orderDal.GetAll();
     }
+
+    public int GetTotalOrderCount()
+    {
+        return _orderDal.GetTotalOrderCount();
+    }
+
+    public int GetActiveOrderCount()
+    {
+        return _orderDal.GetActiveOrderCount();
+    }
+
+    public decimal GetLastOrderPrice()
+    {
+        return _orderDal.GetLastOrderPrice();
+    }
 }
