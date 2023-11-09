@@ -7,4 +7,6 @@ public interface IOrderDal : IGenericDal<Order>
     int GetTotalOrderCount();
     int GetActiveOrderCount();
     decimal GetLastOrderPrice();
+    decimal GeTodayTotalPrice();
+
 }

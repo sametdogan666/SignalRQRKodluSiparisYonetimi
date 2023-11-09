@@ -52,4 +52,9 @@ public class OrderManager : IOrderService
     {
         return _orderDal.GetLastOrderPrice();
     }
+
+    public decimal GeTodayTotalPrice()
+    {
+        return _orderDal.GeTodayTotalPrice();
+    }
 }
