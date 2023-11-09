@@ -21,8 +21,7 @@
                 connection.start().then(() => {
                     $("#connstatus").text(connection.state);
                     setInterval(() => {
-                        connection.invoke("SendCategoryCount");
-                        connection.invoke("SendProductCount");
+                        connection.invoke("SendStatistics");                     
                     }, 1000);
 
                 }).catch((err) => { console.log(err) });
@@ -34,6 +33,15 @@
                 connection.on("ReceiveProductCount", (resultProductCount) => {
                     $("#productcount").text(resultProductCount);
                 });
+
+                connection.on("ReceiveActiveCategoryCount", (resultActiveCategoryCount) => {
+                    $("#activecategorycount").text(resultActiveCategoryCount);
+                });
+
+                connection.on("ReceivePassiveCategoryCount", (resultPassiveCategoryCount) => {
+                    $("#passivecategorycount").text(resultPassiveCategoryCount);
+                });
+
             });
 
         </script>
@@ -85,13 +93,13 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="icon-big text-center">
-                                    <i class="la la-newspaper-o"></i>
+                                    <i class="la la-check-circle"></i>
                                 </div>
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Subscribers</p>
-                                    <h4 class="card-title">1303</h4>
+                                    <p class="card-category">Aktif Kategori</p>
+                                    <h4 class="card-title" id="activecategorycount"></h4>
                                 </div>
                             </div>
                         </div>
@@ -104,13 +112,13 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="icon-big text-center">
-                                    <i class="la la-check-circle"></i>
+                                    <i class="la la-close"></i>
                                 </div>
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Order</p>
-                                    <h4 class="card-title">576</h4>
+                                    <p class="card-category">Pasif Kategori</p>
+                                    <h4 class="card-title" id="passivecategorycount"></h4>
                                 </div>
                             </div>
                         </div>

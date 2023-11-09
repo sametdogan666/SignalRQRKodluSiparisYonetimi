@@ -16,15 +16,19 @@ public class SignalRHub : Hub
         _productService = productService;
     }
 
-    public async Task SendCategoryCount()
+    public async Task SendStatistics()
     {
         var resultCategoryCount = _categoryService.GetCategoryCount();
         await Clients.All.SendAsync("ReceiveCategoryCount", resultCategoryCount);
-    }
 
-    public async Task SendProductCount()
-    {
         var resultProductCount = _productService.GetProductCount();
         await Clients.All.SendAsync("ReceiveProductCount", resultProductCount);
+
+        var resultActiveCategoryCount = _categoryService.GetActiveCategoryCount();
+        await Clients.All.SendAsync("ReceiveActiveCategoryCount", resultActiveCategoryCount);
+
+        var resultPassiveCategoryCount = _categoryService.GetPassiveCategoryCount();
+        await Clients.All.SendAsync("ReceivePassiveCategoryCount", resultPassiveCategoryCount);
     }
+
 }
