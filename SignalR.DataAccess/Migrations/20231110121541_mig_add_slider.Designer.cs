@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SignalR.DataAccess.Concrete;
 
@@ -11,9 +12,10 @@ using SignalR.DataAccess.Concrete;
 namespace SignalR.DataAccess.Migrations
 {
     [DbContext(typeof(SignalRContext))]
-    partial class SignalRContextModelSnapshot : ModelSnapshot
+    [Migration("20231110121541_mig_add_slider")]
+    partial class mig_add_slider
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,19 +107,7 @@ namespace SignalR.DataAccess.Migrations
                     b.Property<string>("FooterDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FooterTitle")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OpenDays")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OpenDaysDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OpenHours")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
