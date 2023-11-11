@@ -16,7 +16,7 @@ public class BasketsController : Controller
     public async Task<IActionResult> Index()
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync("https://localhost:7065/api/Baskets/get-basket-by-menu-table-number");
+        var responseMessage = await client.GetAsync("https://localhost:7065/api/Baskets/get-basket-by-menu-table-number/4");
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
