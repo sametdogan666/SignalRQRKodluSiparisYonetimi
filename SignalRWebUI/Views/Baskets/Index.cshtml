@@ -1,4 +1,4 @@
-﻿@model List<ResultBasketViewModel>
+﻿@model List<ResultBasketWithProductViewModel>
 @{
     Layout = null;
     int count = 0;
@@ -49,7 +49,7 @@
                         <tbody class="align-middle">
                             <tr>
                                 <td class="align-middle">@count</td>
-                                <td class="align-middle">@item.ProductId</td>
+                                <td class="align-middle">@item.ProductName</td>
                                 <td class="align-middle">@item.Count</td>
                                 <td class="align-middle">@item.Price</td>
                                 <td class="align-middle">@item.TotalPrice</td>

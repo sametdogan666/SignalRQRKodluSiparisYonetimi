@@ -1,5 +1,6 @@
 ﻿using SignalR.Business.Abstract;
 using SignalR.DataAccess.Abstract;
+using SignalR.Dto.BasketDto;
 using SignalR.Entities.Entities;
 
 namespace SignalR.Business.Concrete;
@@ -41,5 +42,10 @@ public class BasketManager : IBasketService
     public List<Basket> GetBasketByMenuTableNumber(int id)
     {
         return _basketDal.GetBasketByMenuTableNumber(id);
+    }
+
+    public List<ResultBasketWithProductDto> GetBasketListByMenuTableWithProductName(int id)
+    {
+        return _basketDal.GetBasketListByMenuTableWithProductName(id);
     }
 }
