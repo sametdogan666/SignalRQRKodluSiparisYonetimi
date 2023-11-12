@@ -1,0 +1,67 @@
+﻿@model UpdateNotificationViewModel
+
+@{
+    ViewData["Title"] = "UpdateNotification";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bildirim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <input type="hidden" asp-for="Id"/>
+                        <div class="card-header">
+                            <div class="card-title">Bildirim Güncelleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="type">Bildirim Türü</label>
+                                <input type="text" class="form-control" asp-for="Type" id="type">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="icon">Bildirim İkonu</label>
+                                <input type="text" class="form-control" asp-for="Icon" id="icon">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="description">Bildirim Açıklaması</label>
+                                <input type="text" class="form-control" asp-for="Description" id="description">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="description">Bildirim Tarihi</label>
+                                <input type="date" class="form-control" asp-for="Date" id="description">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="icon">Bildirim Durumu</label>
+                                <select class="form-control nice-select wide" asp-for="Status">
+                                    <option value="true">
+                                        Okundu
+                                    </option>
+                                    <option value="false">
+                                        Okunmadı
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary btn-round">Bildirimi Güncelle</button>
+                            <a href="/Notifications/Index/" class="btn btn-danger btn-round">Değişikliklerden Vazgeç</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
