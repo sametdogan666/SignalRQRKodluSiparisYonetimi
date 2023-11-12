@@ -97,4 +97,20 @@ public class NotificationsController : Controller
 
         return View();
     }
+
+    public async Task<IActionResult> NotificationChangeToStatusFalse(int id)
+    {
+        var client = _httpClientFactory.CreateClient();
+        await client.GetAsync($"https://localhost:7065/api/Notifications/notification-change-to-status-false/{id}");
+
+        return RedirectToAction("Index");
+    }
+
+    public async Task<IActionResult> NotificationChangeToStatusTrue(int id)
+    {
+        var client = _httpClientFactory.CreateClient();
+        await client.GetAsync($"https://localhost:7065/api/Notifications/notification-change-to-status-true/{id}");
+
+        return RedirectToAction("Index");
+    }
 }
