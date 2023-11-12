@@ -47,4 +47,14 @@ public class NotificationManager : INotificationService
     {
         return _notificationDal.GetAllNotificationByFalse();
     }
+
+    public void NotificationChangeToStatusTrue(int id)
+    {
+        _notificationDal.NotificationChangeToStatusTrue(id);
+    }
+
+    public void NotificationChangeToStatusFalse(int id)
+    {
+        _notificationDal.NotificationChangeToStatusFalse(id);
+    }
 }

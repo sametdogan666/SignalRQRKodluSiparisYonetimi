@@ -6,4 +6,7 @@ public interface INotificationDal : IGenericDal<Notification>
 {
     int GetNotificationCountByStatusFalse();
     List<Notification> GetAllNotificationByFalse();
+    void NotificationChangeToStatusTrue(int id);
+    void NotificationChangeToStatusFalse(int id);
+    
 }

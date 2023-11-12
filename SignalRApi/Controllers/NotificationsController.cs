@@ -22,7 +22,7 @@ namespace SignalRApi.Controllers
         {
             return Ok(_notificationService.GetAll());
         }
-       
+
         [HttpGet("get-notifications-count-by-status-false")]
         public IActionResult GetNotificationCountByStatusFalse()
         {
@@ -81,6 +81,22 @@ namespace SignalRApi.Controllers
             });
 
             return Ok("Bildirim Güncellendi");
+        }
+
+        [HttpGet("notification-change-to-status-true/{id}")]
+        public IActionResult NotificationChangeToStatusTrue(int id)
+        {
+            _notificationService.NotificationChangeToStatusTrue(id);
+
+            return Ok("Güncelleme Yapıldı");
+        }
+
+        [HttpGet("notification-change-to-status-false/{id}")]
+        public IActionResult NotificationChangeToStatusFalse(int id)
+        {
+            _notificationService.NotificationChangeToStatusFalse(id);
+
+            return Ok("Güncelleme Yapıldı");
         }
     }
 }
