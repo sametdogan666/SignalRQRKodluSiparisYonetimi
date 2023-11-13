@@ -3,17 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApi", "SignalRApi\SignalRApi.csproj", "{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRApi", "SignalRApi\SignalRApi.csproj", "{F635089D-4B20-4BD1-8AD8-44D8BB77B73A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRWebUI", "SignalRWebUI\SignalRWebUI.csproj", "{AA5A2485-7542-4EDA-BB09-79B63AE1164E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRWebUI", "SignalRWebUI\SignalRWebUI.csproj", "{AA5A2485-7542-4EDA-BB09-79B63AE1164E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Entities", "SignalR.Entities\SignalR.Entities.csproj", "{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.Entities", "SignalR.Entities\SignalR.Entities.csproj", "{9A7DFEFB-C7D8-4534-AD92-086D7CDDAE77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.DataAccess", "SignalR.DataAccess\SignalR.DataAccess.csproj", "{CFD0F71F-DC33-4810-B27E-8A27E1CA30EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.DataAccess", "SignalR.DataAccess\SignalR.DataAccess.csproj", "{CFD0F71F-DC33-4810-B27E-8A27E1CA30EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Business", "SignalR.Business\SignalR.Business.csproj", "{B08859AF-B5F2-4EB0-B95B-43EFE60D2DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.Business", "SignalR.Business\SignalR.Business.csproj", "{B08859AF-B5F2-4EB0-B95B-43EFE60D2DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Dto", "SignalR.Dto\SignalR.Dto.csproj", "{999A1E52-C348-4006-B53E-95C7DFF5BD2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.Dto", "SignalR.Dto\SignalR.Dto.csproj", "{999A1E52-C348-4006-B53E-95C7DFF5BD2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA837597-4B8B-4AF4-893E-D4455246957B}"
+	ProjectSection(SolutionItems) = preProject
+		Todo.txt = Todo.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

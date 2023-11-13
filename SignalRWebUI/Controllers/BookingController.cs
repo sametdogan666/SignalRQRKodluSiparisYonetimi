@@ -98,4 +98,22 @@ public class BookingController : Controller
 
         return View();
     }
+
+    [HttpGet]
+    public async Task<IActionResult> BookingStatusApproved(int id)
+    {
+        var client = _httpClientFactory.CreateClient();
+        var responseMessage = await client.GetAsync($"https://localhost:7065/api/Booking/booking-status-approved/{id}");
+
+       return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> BookingStatusCanceled(int id)
+    {
+        var client = _httpClientFactory.CreateClient();
+        var responseMessage = await client.GetAsync($"https://localhost:7065/api/Booking/booking-status-canceled/{id}");
+
+        return RedirectToAction("Index");
+    }
 }
