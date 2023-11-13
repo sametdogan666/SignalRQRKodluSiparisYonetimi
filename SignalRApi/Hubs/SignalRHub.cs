@@ -26,6 +26,8 @@ public class SignalRHub : Hub
         _notificationService = notificationService;
     }
 
+    //public static int clientCount { get; set; } = 0;
+    private static int clientCount = 0;
     public async Task SendStatistics()
     {
         var resultCategoryCount = _categoryService.GetCategoryCount();
@@ -113,5 +115,19 @@ public class SignalRHub : Hub
     public async Task SendMessage(string user, string message)
     {
         await Clients.All.SendAsync("ReceiveMessage", user, message);
+    }
+
+    public override async Task OnConnectedAsync()
+    {
+        clientCount++;
+        await Clients.All.SendAsync("ReceiveClientCount", clientCount);
+        await base.OnConnectedAsync();
+    }
+
+    public override async Task OnDisconnectedAsync(Exception? exception)
+    {
+        clientCount--;
+        await Clients.All.SendAsync("ReceiveClientCount", clientCount);
+        await base.OnDisconnectedAsync(exception);
     }
 }
