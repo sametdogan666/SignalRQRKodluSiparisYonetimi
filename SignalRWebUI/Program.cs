@@ -1,6 +1,11 @@
+using SignalR.DataAccess.Concrete;
+using SignalR.Entities.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container.w
+builder.Services.AddDbContext<SignalRContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SignalRContext>();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 
