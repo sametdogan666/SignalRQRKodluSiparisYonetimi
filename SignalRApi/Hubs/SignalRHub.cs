@@ -109,4 +109,9 @@ public class SignalRHub : Hub
         var resultMenuTableStatus = _menuTableService.GetAll();
         await Clients.All.SendAsync("ReceiveMenuTableStatus", resultMenuTableStatus);
     }
+
+    public async Task SendMessage(string user, string message)
+    {
+        await Clients.All.SendAsync("ReceiveMessage", user, message);
+    }
 }
