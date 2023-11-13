@@ -69,7 +69,7 @@ public class ProductController : Controller
     public async Task<IActionResult> DeleteProduct(int id)
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.DeleteAsync($"https://localhost:7065/Product/DeleteProduct/{id}");
+        var responseMessage = await client.DeleteAsync($"https://localhost:7065/api/Product/delete-product/{id}");
 
         if (responseMessage.IsSuccessStatusCode)
         {
@@ -112,6 +112,7 @@ public class ProductController : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateProduct(UpdateProductViewModel updateProductViewModel)
     {
+        updateProductViewModel.Status = true;
         var client = _httpClientFactory.CreateClient();
         var jsonData = JsonConvert.SerializeObject(updateProductViewModel);
         StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");

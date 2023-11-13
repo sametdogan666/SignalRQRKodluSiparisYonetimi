@@ -85,6 +85,7 @@ public class CategoryController : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateCategory(UpdateCategoryViewModel updateCategoryViewModel)
     {
+        updateCategoryViewModel.Status = true;
         var client = _httpClientFactory.CreateClient();
         var jsonData = JsonConvert.SerializeObject(updateCategoryViewModel);
         StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
