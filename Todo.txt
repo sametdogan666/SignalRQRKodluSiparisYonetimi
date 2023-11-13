@@ -1,1 +1,2 @@
 ---> Admin tarafinda rezervasyon sayfasinda tarih formati duzenlenecek.
+---> Admin tarafinda hakkimda yazisi girildigi zaman create metodu gorunmesin.
