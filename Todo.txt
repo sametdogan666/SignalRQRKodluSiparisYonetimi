@@ -2,3 +2,5 @@
 ---> Admin tarafinda hakkimda yazisi girildigi zaman create metodu gorunmesin.
 ---> Admin tarafinda öne çıkan yazisi girildigi zaman create metodu gorunmesin.
 ---> Ana sayfada öne çıkan ürünlerimiz kısmında hamburger, makarna, pizza ve salatadan birer adet ürün getirilecek.
+---> Sepete urun eklendigi zaman sepet uzerinde urun sayisi artsin.
+---> Trigger, sepete insert islemi oldugu anda toplam degeri tetikleyici uzerinden calistir.
