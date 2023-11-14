@@ -1,6 +1,7 @@
 ﻿using SignalR.DataAccess.Abstract;
 using SignalR.DataAccess.Concrete;
 using SignalR.DataAccess.Repositories;
+using SignalR.Dto.DiscountDto;
 using SignalR.Entities.Entities;
 
 namespace SignalR.DataAccess.EntityFramework;
@@ -25,5 +26,13 @@ public class EfDiscountDal : GenericRepository<Discount>, IDiscountDal
         var value = context.Discounts.Find(id);
         value.Status = false;
         context.SaveChanges();
+    }
+
+    public List<Discount> GetListByStatusTrue()
+    {
+        using var context = new SignalRContext();
+        var value = context.Discounts.Where(x=>x.Status == true).ToList();
+
+        return value;
     }
 }

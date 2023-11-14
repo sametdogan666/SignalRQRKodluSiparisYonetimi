@@ -47,4 +47,9 @@ public class DiscountManager : IDiscountService
     {
         _discountDal.ChangeStatusToFalse(id);
     }
+
+    public List<Discount> GetListByStatusTrue()
+    {
+        return _discountDal.GetListByStatusTrue();
+    }
 }

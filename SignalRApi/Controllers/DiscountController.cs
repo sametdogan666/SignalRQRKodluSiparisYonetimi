@@ -93,5 +93,13 @@ namespace SignalRApi.Controllers
 
             return Ok("İndirim Durumu Güncellendi");
         }
+
+        [HttpGet("get-list-by-status-true")]
+        public IActionResult GetListByStatusTrue()
+        {
+            var results = _mapper.Map<List<ResultDiscountDto>>(_discountService.GetListByStatusTrue());
+
+            return Ok(results);
+        }
     }
 }
