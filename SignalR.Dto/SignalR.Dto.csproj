@@ -10,7 +10,6 @@
     <Folder Include="AboutDto\" />
     <Folder Include="BookingDto\" />
     <Folder Include="DiscountDto\" />
-    <Folder Include="FeatureDto\" />
     <Folder Include="OrderDto\" />
     <Folder Include="SocialMediaDto\" />
   </ItemGroup>

@@ -1,6 +1,6 @@
-﻿namespace SignalRWebUI.ViewModels.FeatureViewModels;
+﻿namespace SignalRWebUI.ViewModels.SliderViewModels;
 
-public class UpdateFeatureViewModel
+public class UpdateSliderViewModel
 {
     public int Id { get; set; }
     public string? Title1 { get; set; }

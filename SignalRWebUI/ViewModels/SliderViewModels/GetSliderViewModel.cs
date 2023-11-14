@@ -1,6 +1,6 @@
-﻿namespace SignalR.Dto.FeatureDto;
+﻿namespace SignalRWebUI.ViewModels.SliderViewModels;
 
-public class ResultFeatureDto
+public class GetSliderViewModel
 {
     public int Id { get; set; }
     public string? Title1 { get; set; }

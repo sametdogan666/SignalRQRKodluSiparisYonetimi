@@ -16,7 +16,7 @@ public class _DefaultSliderPartialComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync("https://localhost:7065/api/Sliders/get-list-sliders");
+        var responseMessage = await client.GetAsync("https://localhost:7065/api/Slider/get-list-sliders");
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();

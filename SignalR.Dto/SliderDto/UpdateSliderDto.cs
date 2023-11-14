@@ -1,6 +1,6 @@
-﻿namespace SignalR.Dto.FeatureDto;
+﻿namespace SignalR.Dto.SliderDto;
 
-public class UpdateFeatureDto
+public class UpdateSliderDto
 {
     public int Id { get; set; }
     public string? Title1 { get; set; }

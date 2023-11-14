@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.Business.Abstract;
-using SignalR.Dto.FeatureDto;
 using SignalR.Dto.ProductDto;
 using SignalR.Entities.Entities;
 

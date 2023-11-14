@@ -2,15 +2,15 @@
 using Newtonsoft.Json;
 using SignalRWebUI.ViewModels.CategoryViewModels;
 using System.Text;
-using SignalRWebUI.ViewModels.FeatureViewModels;
+using SignalRWebUI.ViewModels.SliderViewModels;
 
 namespace SignalRWebUI.Controllers;
 
-public class FeatureController : Controller
+public class SliderController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
 
-    public FeatureController(IHttpClientFactory httpClientFactory)
+    public SliderController(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
     }
@@ -18,12 +18,12 @@ public class FeatureController : Controller
     public async Task<IActionResult> Index()
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync("https://localhost:7065/api/Feature/get-list-features");
+        var responseMessage = await client.GetAsync("https://localhost:7065/api/Slider/get-list-sliders");
 
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var results = JsonConvert.DeserializeObject<List<ResultFeatureViewModel>>(jsonData);
+            var results = JsonConvert.DeserializeObject<List<ResultSliderViewModel>>(jsonData);
 
             return View(results);
         }
@@ -32,18 +32,18 @@ public class FeatureController : Controller
     }
 
     [HttpGet]
-    public IActionResult CreateFeature()
+    public IActionResult CreateSlider()
     {
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateFeature(CreateFeatureViewModel createFeatureViewModel)
+    public async Task<IActionResult> CreateSlider(CreateSliderViewModel createSliderViewModel)
     {
         var client = _httpClientFactory.CreateClient();
-        var jsonData = JsonConvert.SerializeObject(createFeatureViewModel);
+        var jsonData = JsonConvert.SerializeObject(createSliderViewModel);
         StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-        var responseMessage = await client.PostAsync("https://localhost:7065/api/Feature/create-feature", stringContent);
+        var responseMessage = await client.PostAsync("https://localhost:7065/api/Slider/create-slider", stringContent);
 
         if (responseMessage.IsSuccessStatusCode)
         {
@@ -53,10 +53,10 @@ public class FeatureController : Controller
         return View();
     }
 
-    public async Task<IActionResult> DeleteFeature(int id)
+    public async Task<IActionResult> DeleteSlider(int id)
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.DeleteAsync($"https://localhost:7065/api/Feature/delete-feature/{id}");
+        var responseMessage = await client.DeleteAsync($"https://localhost:7065/api/Slider/delete-slider/{id}");
 
         if (responseMessage.IsSuccessStatusCode)
         {
@@ -67,15 +67,15 @@ public class FeatureController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> UpdateFeature(int id)
+    public async Task<IActionResult> UpdateSlider(int id)
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync($"https://localhost:7065/api/Feature/get-by-id-feature/{id}");
+        var responseMessage = await client.GetAsync($"https://localhost:7065/api/Slider/get-by-id-slider/{id}");
 
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var value = JsonConvert.DeserializeObject<UpdateFeatureViewModel>(jsonData);
+            var value = JsonConvert.DeserializeObject<UpdateSliderViewModel>(jsonData);
 
             return View(value);
         }
@@ -84,12 +84,12 @@ public class FeatureController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> UpdateFeature(UpdateFeatureViewModel updateFeatureViewModel)
+    public async Task<IActionResult> UpdateSlider(UpdateSliderViewModel updateSliderViewModel)
     {
         var client = _httpClientFactory.CreateClient();
-        var jsonData = JsonConvert.SerializeObject(updateFeatureViewModel);
+        var jsonData = JsonConvert.SerializeObject(updateSliderViewModel);
         StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-        var responseMessage = await client.PutAsync("https://localhost:7065/api/Feature/update-feature", stringContent);
+        var responseMessage = await client.PutAsync("https://localhost:7065/api/Slider/update-slider", stringContent);
 
         if (responseMessage.IsSuccessStatusCode)
         {
