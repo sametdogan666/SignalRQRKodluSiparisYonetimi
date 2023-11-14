@@ -64,7 +64,7 @@ namespace SignalRApi.Controllers
                 Title = updateTestimonialDto.Title,
                 Comment = updateTestimonialDto.Comment,
                 ImageUrl = updateTestimonialDto.ImageUrl,
-                Status = updateTestimonialDto.Status
+                Status = true
             });
 
             return Ok("Müşteri Yorum Bilgisi Güncellendi");

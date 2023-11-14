@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+    string status = "";
 }
 
 <div class="content">
@@ -34,11 +36,13 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    count++;
+                                    status = item.Status ? "Okundu" : "Okunmadı";
                                     <tr>
-                                        <td>@item.Id</td>
+                                        <th>@count</th>
                                         <td>@item.Description</td>
                                         <td>@item.Date</td>
-                                        <td>@item.Status</td>
+                                        <td>@status</td>
                                         <td><a href="/Notifications/DeleteNotification/@item.Id/" class="btn btn-outline-danger btn-round">Sil</a></td>
                                         <td><a href="/Notifications/UpdateNotification/@item.Id/" class="btn btn-outline-warning btn-round">Güncelle</a></td>
                                         <td><a href="/Notifications/NotificationChangeToStatusTrue/@item.Id/" class="btn btn-outline-info  btn-round">Okundu</a></td>
