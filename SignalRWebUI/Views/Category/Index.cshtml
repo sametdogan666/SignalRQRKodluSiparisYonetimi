@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
+    string status = "";
 }
 
 <div class="content">
@@ -21,26 +22,27 @@
                         </div>
                         <table class="table mt-3">
                             <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Kategori Adı</th>
-                                <th scope="col">Durumu</th>
-                                <th scope="col">Sil</th>
-                                <th scope="col">Güncelle</th>
-                            </tr>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Kategori Adı</th>
+                                    <th scope="col">Durumu</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach(var item in Model)
-                            {
-                                count++;
-                                <tr>
-                                    <th>@count</th>
-                                    <td>@item.CategoryName</td>
-                                    <td>@item.Status</td>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    status = item.Status ? "Aktif" : "Pasif";
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.CategoryName</td>
+                                        <td>@status</td>
                                         <td><a href="/Category/DeleteCategory/@item.Id/" class="btn btn-outline-danger btn-round">Sil</a></td>
                                         <td><a href="/Category/UpdateCategory/@item.Id/" class="btn btn-outline-warning btn-round">Güncelle</a></td>
-                                </tr>
-                            }
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                         <a href="/Category/CreateCategory/" class="btn btn-outline-primary btn-round">Yeni Kategori Ekle</a>

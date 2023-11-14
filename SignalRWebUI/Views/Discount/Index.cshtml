@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+    string status = "";
 }
 
 <div class="content">
@@ -24,25 +26,27 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Ürün</th>
                                     <th scope="col">İndirim Oranı</th>
-                                    <th scope="col">Durumu</th>
-                                    <th scope="col">Açıklama</th>
-                                    <th scope="col">Fotoğraf Yolu</th>
+                                    <th scope="col">Durum</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
+                                    <th scope="col">Aktif Yap</th>
+                                    <th scope="col">Pasif Yap</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    count++;
+                                    status = item.Status ? "Aktif" : "Pasif";
                                     <tr>
-                                        <td>@item.Id</td>
+                                        <th>@count</th>
                                         <td>@item.Title</td>
                                         <td>@item.Amount</td>
-                                        <td><a href="/Discount/DeleteDiscount/@item.Id/" class="btn btn-outline-success btn-round">Durum</a></td>
-                                        <td>@item.Description</td>
-                                        <td>@item.ImageUrl</td>
+                                        <td>@status</td>
                                         <td><a href="/Discount/DeleteDiscount/@item.Id/" class="btn btn-outline-danger btn-round">Sil</a></td>
                                         <td><a href="/Discount/UpdateDiscount/@item.Id/" class="btn btn-outline-warning btn-round">Güncelle</a></td>
+                                        <td><a href="/Discount/ChangeStatusToTrue/@item.Id/" class="btn btn-outline-info btn-round">Aktif Yap</a></td>
+                                        <td><a href="/Discount/ChangeStatusToFalse/@item.Id/" class="btn btn-outline-dark btn-round">Pasif Yap</a></td>
                                     </tr>
                                 }
                             </tbody>

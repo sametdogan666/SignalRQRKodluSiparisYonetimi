@@ -37,4 +37,14 @@ public class DiscountManager : IDiscountService
     {
         return _discountDal.GetAll();
     }
+
+    public void ChangeStatusToTrue(int id)
+    {
+        _discountDal.ChangeStatusToTrue(id);
+    }
+
+    public void ChangeStatusToFalse(int id)
+    {
+        _discountDal.ChangeStatusToFalse(id);
+    }
 }
