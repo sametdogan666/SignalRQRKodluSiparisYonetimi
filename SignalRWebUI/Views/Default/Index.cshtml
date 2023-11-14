@@ -6,21 +6,15 @@
 
 @await Component.InvokeAsync("_DefaultSliderPartialComponent")
 
-<!-- offer section -->
 @await Component.InvokeAsync("_DefaultOfferPartialComponent")
 
-<!-- end offer section -->
-<!-- food section -->
 @await Component.InvokeAsync("_DefaultOurMenuPartialComponent")
 
-<!-- end food section -->
-<!-- about section -->
 @await Component.InvokeAsync("_DefaultAboutPartialComponent")
 
-<!-- end about section -->
-<!-- book section -->
-@await Component.InvokeAsync("_DefaultBookATablePartialComponent")
-<!-- end book section -->
-<!-- client section -->
+@* @await Component.InvokeAsync("_DefaultBookATablePartialComponent") *@
+
+@await Html.PartialAsync("SendMessage")
+
 @await Component.InvokeAsync("_DefaultTestimonialPartialComponent")
 

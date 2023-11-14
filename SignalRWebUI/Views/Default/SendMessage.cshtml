@@ -1,0 +1,39 @@
+﻿@model CreateMessageViewModel
+
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Bize Ulaşın
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form_container">
+                    <form method="post" asp-action="SendMessage" asp-controller="Default">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="FullName"/>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Telefon" asp-for="PhoneNumber"/>
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" asp-for="Email"/>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Konu" asp-for="Subject" />
+                        </div>
+                        <div>
+                           <textarea asp-for="MessageContent" rows="5" class="form-control" placeholder="Mesajınız">Mesaj</textarea>
+                        </div>
+                        <div class="btn_box">
+                            <button>
+                                Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
