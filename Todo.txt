@@ -4,3 +4,4 @@
 ---> Ana sayfada öne çıkan ürünlerimiz kısmında hamburger, makarna, pizza ve salatadan birer adet ürün getirilecek.
 ---> Sepete urun eklendigi zaman sepet uzerinde urun sayisi artsin.
 ---> Trigger, sepete insert islemi oldugu anda toplam degeri tetikleyici uzerinden calistir.
+---> QR Kod taranacak daha sonra QR kod çözümlenecek (API tarafında BasketsController'da). Sonra bir kosul yazilacak, QR Koddan gelen string ifade icin. Daha sonra alt sorgu ile MenuTableId degeri cekilecek (string ifadeden gelen menuTableName alaninin Id degerini al diye).
