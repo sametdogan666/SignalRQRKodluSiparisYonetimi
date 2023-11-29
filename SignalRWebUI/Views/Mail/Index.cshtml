@@ -1,0 +1,45 @@
+﻿@model CreateMailViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mail Sayfası</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Mail Gönderme Paneli</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="receiver">Alıcı Mail Adresi</label>
+                                <input type="text" class="form-control" asp-for="ReceiverMail" id="receiver">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="subject">Konu</label>
+                                <input type="text" class="form-control" asp-for="Subject" id="subject">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="message">Mesaj</label>
+                                <textarea rows="5" asp-for="Body" class="form-control" id="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary btn-round">Maili Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
